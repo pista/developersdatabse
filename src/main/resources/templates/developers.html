@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Developers database</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Developers</h1>
+	<table>
+		<tr>
+			<th>Name</th>
+			<th>Skills</th>
+			<th></th>
+		</tr>
+	    <tr th:each="developer : ${developers}">
+	    	<td th:text="${developer.firstName + ' ' + developer.lastName}"></td>
+	    	<td>
+	    		<span th:each="skill,iterStat : ${developer.skills}">
+	    			<span th:text="${skill.label}"/><th:block th:if="${!iterStat.last}">,</th:block>
+	    		</span>
+	    	</td>
+	    	<td>
+		    	<a th:href="@{/developer/{id}(id=${developer.id})}">view</a>
+	    	</td>
+	    </tr>
+	</table>
+</body>
+</html>

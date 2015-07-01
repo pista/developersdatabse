@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Developer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Developer</h1>
+	Name: <b th:text="${developer.firstName}" /> <b th:text="${developer.lastName}" /><br/>
+	Email: <span th:text="${developer.email}" /><br/>
+	Skills:
+		<span th:each="skill : ${developer.skills}">
+			<br/>&nbsp;&nbsp;<span th:text="${skill.label}" /> - <span th:text="${skill.description}" />
+		</span>
+</body>
+</html>
