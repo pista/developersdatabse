@@ -1,5 +1,5 @@
 
-** How to try out the code
+## How to try out the code
 
 The easiest way to read through this code, try it out and play with it is to follow these instructions:
 - download the Spring Tool Suite (http://spring.io/tools/sts/all) 
