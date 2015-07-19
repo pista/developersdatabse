@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
 
 @Entity
 public class Developer {
@@ -71,6 +72,15 @@ public class Developer {
 
 	public void setSkills(List<Skill> skills) {
 		this.skills = skills;
+	}
+
+	public boolean hasSkill(Skill skill) {
+		for (Skill containedSkill: getSkills()) {
+			if (containedSkill.getId() == skill.getId()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

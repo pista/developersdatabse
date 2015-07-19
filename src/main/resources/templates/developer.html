@@ -12,5 +12,13 @@
 		<span th:each="skill : ${developer.skills}">
 			<br/>&nbsp;&nbsp;<span th:text="${skill.label}" /> - <span th:text="${skill.description}" />
 		</span>
+	<form th:action="@{/developer/{id}/skills(id=${developer.id})}" method="post" enctype="multipart/form-data" >
+		<select name="skillId">
+			<option th:each="skill : ${skills}" 
+				th:value="${skill.id}" 
+				th:text="${skill.description}">Skill</option>
+		</select>
+		<input type="submit" value="Add skill"/>
+	</form>
 </body>
 </html>

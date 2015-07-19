@@ -24,5 +24,20 @@
 	    	</td>
 	    </tr>
 	</table>
+	<hr/>
+	<form th:action="@{/developers}" method="post" enctype="multipart/form-data">
+		<div>
+			First name: <input name="firstName" />
+		</div>
+		<div>
+			Last name: <input name="lastName" />
+		</div>
+		<div>
+			Email: <input name="email" />
+		</div>
+		<div>
+			<input type="submit" value="Create developer" name="button"/>
+		</div>
+	</form>
 </body>
 </html>
