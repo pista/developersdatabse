@@ -3,22 +3,60 @@
 <head>
     <title>Developer</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+	<link rel="stylesheet" href="/bootstrap.min.css" media="screen"/>
 </head>
 <body>
-	<h1>Developer</h1>
-	Name: <b th:text="${developer.firstName}" /> <b th:text="${developer.lastName}" /><br/>
-	Email: <span th:text="${developer.email}" /><br/>
-	Skills:
-		<span th:each="skill : ${developer.skills}">
-			<br/>&nbsp;&nbsp;<span th:text="${skill.label}" /> - <span th:text="${skill.description}" />
-		</span>
-	<form th:action="@{/developer/{id}/skills(id=${developer.id})}" method="post" enctype="multipart/form-data" >
-		<select name="skillId">
-			<option th:each="skill : ${skills}" 
-				th:value="${skill.id}" 
-				th:text="${skill.description}">Skill</option>
-		</select>
-		<input type="submit" value="Add skill"/>
-	</form>
+	<div class="container">
+      <div class="page-header" id="banner">
+        <div class="row">
+          <div class="col-lg-8 col-md-7 col-sm-6">
+            <h1>Developer</h1>
+            
+            <form class="form-horizontal" th:action="@{/developer/{id}/skills(id=${developer.id})}" method="post" enctype="multipart/form-data" >
+            	<fieldset>
+            		<div class="form-group">
+	                    <label class="col-lg-2 control-label">Name</label>
+	                    <div class="col-lg-6">
+	                    	<input type="text" class="form-control" disabled="disabled" 
+	                    		th:value="${developer.firstName + ' ' + developer.lastName}"/>
+	                    </div>
+                	</div>
+            		<div class="form-group">
+	                    <label class="col-lg-2 control-label">Email</label>
+	                    <div class="col-lg-6">
+	                    	<input type="text" class="form-control" disabled="disabled" 
+	                    		th:value="${developer.email}"/>
+	                    </div>
+                	</div>
+            		<div class="form-group">
+	                    <label class="col-lg-2 control-label">Skills</label>
+	                    <div class="col-lg-10">
+							<div th:each="skill : ${developer.skills}">
+								<span th:text="${skill.label}" /> - <span th:text="${skill.description}" />
+							</div>
+	                    </div>
+	                </div>
+            		<div class="form-group">
+	                    <div class="col-lg-6 col-lg-offset-2">
+							<div class="input-group">
+								<select name="skillId" class="form-control">
+									<option th:each="skill : ${skills}" 
+										th:value="${skill.id}" 
+										th:text="${skill.description}">Skill</option>
+								</select>
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-default">Add skill</button>
+								</span>
+							</div>
+	                    </div>
+                	</div>
+            	</fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+	</div>
+
 </body>
 </html>
