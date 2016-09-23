@@ -47,6 +47,7 @@ public class Application implements CommandLineRunner {
 				Arrays.asList(new Skill[] { emberjs, angularjs, javascript })));
 		developers.add(new Developer("Bob", "Brown", "brown@example.com", 
 				Arrays.asList(new Skill[] { emberjs })));
+				/*you should do not use yeah!*/
 		developers.add(new Developer("yeah", "just test", "brown@example.com",
 				Arrays.asList(new Skill[] { emberjs })));
 		developerRepository.save(developers);
