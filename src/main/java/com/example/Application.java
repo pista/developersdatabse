@@ -45,11 +45,10 @@ public class Application implements CommandLineRunner {
 				Arrays.asList(new Skill[] { angularjs, ruby })));
 		developers.add(new Developer("Fred", "Miller", "f.miller@example.com", 
 				Arrays.asList(new Skill[] { emberjs, angularjs, javascript })));
-		developers.add(new Developer("Bob", "Brown", "brown@example.com",
+		developers.add(new Developer("Bob", "Brown", "brown@example.com", 
 				Arrays.asList(new Skill[] { emberjs })));
-		developers.add(new Developer("Bob", "Brown", "brown@example.com",
+		developers.add(new Developer("ninhn", "lucton", "brown@example.com",
 				Arrays.asList(new Skill[] { emberjs })));
-
 		developerRepository.save(developers);
 	}
 
