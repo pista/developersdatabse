@@ -1,0 +1,26 @@
+# Temp-files
+*~
+
+# MacOSX stuff
+.DS_Store
+
+# Eclipse
+.project
+.buildpath
+.settings/
+.classpath
+/build/
+/bin/
+
+# Gradle
+.gradle/
+
+# Maven
+/target/
+
+# Java binaries
+*.class
+
+# Checkstyle config
+.checkstyle
+
